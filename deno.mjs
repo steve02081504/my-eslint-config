@@ -164,7 +164,7 @@ const globals = {
 
 /**
  * ESLint 配置。
- * @type {import('eslint').Linter.FlatConfig[]}
+ * @type {import('npm:eslint').Linter.FlatConfig[]}
  */
 export default [
 	{

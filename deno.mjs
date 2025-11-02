@@ -167,8 +167,11 @@ const globals = {
  * @type {import('npm:eslint').Linter.FlatConfig[]}
  */
 export default [
+	// 全局忽略配置
 	{
-		ignores: ['**/dist/*', '**/data/*'],
+		ignores: ['**/dist/**', '**/data/**'],
+	},
+	{
 		files: ['**/*.js', '**/*.mjs', '**/*.cjs', '**/*.html'],
 		plugins: {
 			...commonPlugins
@@ -187,7 +190,6 @@ export default [
 		rules: commonRules,
 	},
 	{
-		ignores: ['**/dist/*', '**/data/*'],
 		files: ['**/*.html'],
 		plugins: {
 			...commonPlugins,
@@ -207,7 +209,6 @@ export default [
 		rules: commonRules,
 	},
 	{
-		ignores: ['**/dist/*', '**/data/*'],
 		files: ['**/*.ts', '**/*.tsx'],
 		plugins: {
 			...commonPlugins,

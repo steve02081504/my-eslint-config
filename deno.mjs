@@ -1,5 +1,4 @@
 import babel from 'npm:@babel/eslint-parser'
-import html from 'npm:@html-eslint/eslint-plugin'
 import destructuringMerge from 'npm:eslint-plugin-destructuring-merge'
 import htmlreader from 'npm:eslint-plugin-html'
 import importPlugin from 'npm:eslint-plugin-import'
@@ -17,7 +16,6 @@ const commonPlugins = {
 	'remove-duplicates': removeDuplicates,
 	import: importPlugin,
 	jsdoc,
-	html,
 	'typescript-eslint': tseslint
 }
 
@@ -99,62 +97,6 @@ const commonRules = {
 		ignoreReadBeforeAssign: true,
 	}],
 	'destructuring-merge/destructuring-merge': 'warn',
-	'html/no-duplicate-class': 'error',
-	'html/no-duplicate-id': 'error',
-	'html/no-duplicate-attrs': 'error',
-	'html/no-duplicate-in-head': 'error',
-	'html/no-ineffective-attrs': 'error',
-	'html/no-inline-styles': 'error',
-	'html/no-invalid-entity': 'error',
-	'html/no-nested-interactive': 'error',
-	'html/no-obsolete-tags': 'error',
-	'html/no-script-style-type': 'error',
-	'html/prefer-https': 'error',
-	'html/require-attrs': [
-		'error',
-		{
-			tag: 'a',
-			attr: 'rel',
-			value: 'noopener',
-			message: 'for security, please add the rel="noopener" attribute to the <a> tag',
-		},
-	],
-	'html/no-restricted-attr-values': [
-		'error',
-		{
-			attrPatterns: ['rel'],
-			attrValuePatterns: ['noreferrer'],
-			message: 'noreferrer is useless.',
-		}
-	],
-	'html/require-closing-tags': 'error',
-	'html/require-doctype': 'error',
-	'html/require-li-container': 'error',
-	'html/require-meta-charset': 'error',
-	'html/no-multiple-h1': 'error',
-	'html/require-lang': 'error',
-	'html/require-meta-description': 'error',
-	'html/require-open-graph-protocol': 'error',
-	'html/require-title': 'error',
-	'html/no-aria-hidden-on-focusable': 'error',
-	'html/no-empty-headings': 'error',
-	'html/no-heading-inside-button': 'error',
-	'html/no-invalid-role': 'error',
-	'html/no-skip-heading-levels': 'error',
-	'html/require-form-method': 'error',
-	'html/require-frame-title': 'error',
-	'html/require-input-label': 'error',
-	'html/require-meta-viewport': 'error',
-	'html/indent': ['error', 'tab'],
-	'html/lowercase': 'error',
-	'html/no-extra-spacing-attrs': ['error', {
-		enforceBeforeSelfClose: true,
-		disallowMissing: true,
-	}],
-	'html/no-extra-spacing-text': 'error',
-	'html/no-multiple-empty-lines': 'error',
-	'html/no-trailing-spaces': 'error',
-	'html/sort-attrs': 'error',
 }
 
 const globals = {
@@ -172,7 +114,7 @@ export default [
 		ignores: ['**/dist/**', '**/data/**'],
 	},
 	{
-		files: ['**/*.js', '**/*.mjs', '**/*.cjs', '**/*.html'],
+		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
 		plugins: {
 			...commonPlugins
 		},

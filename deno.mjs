@@ -111,7 +111,7 @@ const globals = {
 export default [
 	// 全局忽略配置
 	{
-		ignores: ['**/dist/**', '**/data/**'],
+		ignores: ['**/dist/**', '**/data/**', '**/.deno/**'],
 	},
 	{
 		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
